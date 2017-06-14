@@ -6,7 +6,7 @@
 /*   By: adaly <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/12 16:29:32 by adaly             #+#    #+#             */
-/*   Updated: 2017/06/13 05:09:32 by adaly            ###   ########.fr       */
+/*   Updated: 2017/06/14 05:10:00 by adaly            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,3 +35,11 @@ void	ft_rotate_b(t_pscell **ablist, uintmax_t bsize);
 void	ft_revrotate_ab(t_pscell **ablist, uintmax_t asize, uintmax_t bsize);
 void	ft_revrotate_a(t_pscell **ablist, uintmax_t asize);
 void	ft_revrotate_b(t_pscell **ablist, uintmax_t bsize);
+void	ft_push_a(t_pscell **ablist, uintmax_t asize);
+void	ft_push_b(t_pscell **ablist, uintmax_t bsize);
+void	ft_psczero(t_pscell *target);
+char	**ft_generate_moves(uintmax_t depth);
+t_pscell	**ft_psldup(t_pscell **ablist, uintmax_t size);
+t_pscell	**ft_apply_moves(t_pscell **input_list, char *str, uintmax_t size);
+
+

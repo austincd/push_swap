@@ -40,11 +40,30 @@ int main(void)
 		++counter;
 	}
 	counter = 0;
-//	ft_shift_down(ablist, 'a', pslsize);
-	ft_revrotate_a(ablist, pslsize);
+//	ft_shift_up(ablist, 'a', pslsize);
+//	ft_revrotate_a(ablist, pslsize);
+//	ft_push_b(ablist, 0);
+	t_pscell **temp;
+	temp = NULL;
+	temp = ft_apply_moves(ablist, ft_strdup("666"), pslsize);
+	if (temp)
+	{
+	counter = 0;
 	while (counter < pslsize)
+	{
+		printf("new value is %jd, \nnew current is %ju, \nnew next is %p.\n", temp[0][counter].value, temp[0][counter].current, temp[0][counter].next);
+		++counter;
+	}
+	}
+/*	while (counter < pslsize)
 	{
 		printf("value is %jd, \ncurrent is %ju, \nnext is %p.\n", ablist[0][counter].value, ablist[0][counter].current, ablist[0][counter].next);
 		++counter;
-	}
+	}*/
+/*	counter = 0;
+    while (counter < pslsize)
+    {
+        printf("value is %jd, \ncurrent is %ju, \nnext is %p.\n", ablist[1][counter].value, ablist[1][counter].current, ablist[1][counter].next);
+        ++counter;
+    }*/
 }

@@ -6,7 +6,7 @@
 /*   By: adaly <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/13 03:22:16 by adaly             #+#    #+#             */
-/*   Updated: 2017/06/13 05:14:50 by adaly            ###   ########.fr       */
+/*   Updated: 2017/06/13 18:51:30 by adaly            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,10 +33,7 @@ void	ft_shift_down(t_pscell **ablist, char aorb, uintmax_t size)
 		ablist[n][size + 1] = ablist[n][size];
 		ablist[n][size + 1].current += 1;
 		ablist[n][size + 1].next += 1;
-		ablist[n][0].value = 0;
-		ablist[n][0].correct = 0;
-		ablist[n][0].current = 0;
-		ablist[n][0].next = 0;
+		ft_psczero(ablist[n]);
 	}
 }
 
@@ -60,9 +57,6 @@ void	ft_shift_up(t_pscell **ablist, char aorb, uintmax_t size)
 			ablist[n][counter].next -= 1;
 			++counter;
 		}
-		ablist[n][size].value = 0;
-		ablist[n][size].correct = 0;
-		ablist[n][size].current = 0;
-		ablist[n][size].next = 0;
+		ft_psczero(ablist[n] + size - 1);
 	}
 }
