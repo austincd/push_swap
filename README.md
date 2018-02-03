@@ -105,4 +105,47 @@ Whatever sequence of pushswap operations shifts [1, 2, 3, 0, 6, 7, 4, 5] into [0
 
 will also shift the original integers in the same manner, ordering them from lowest to highest.
 
+#### Operation Strings
+
+Sequences of pushswap operations are represented as operation strings, ASCII-encoded, printable,
+null-terminated character arrays. Because we only have 11 total potential operations to execute,
+we only need one byte or character for each operation. For readability, I've associated each
+operation with digits 0-9 and the characters A and B.
+
+
+
+'0' = Null. Do Nothing.;
+
+'1' = Push A;
+
+'2' = Push B;
+
+'3' = Swap A;
+
+'4' = Swap B;
+
+'5' = Swap AB;
+
+'6' = Rotate A;
+
+'7' = Rotate B;
+
+'8' = Reverse Rotate A;
+
+'9' = Reverse Rotate B;
+
+'A' = Rotate AB;
+
+'B' = Reverse Rotate AB;
+
+
+
+#### Selection Strings
+
+char *selstr is used to refer to a selection string, which is intended to specify elements of an array
+to be selected for some operation. A selstr is an ASCII encoded, null-terminated string of '0' and '1'
+characters. The first character represents whether or not element 0 of an array is selected. The second
+character represents whether or not element 1 of an array is selected, so on and so forth. '0' is used
+to represent "false" or unselected elements in a human readable format, while '1' characters mark array
+elements that ARE selected.
 
