@@ -34,6 +34,7 @@
 ###### Swap AB:
 
 +call Swap A();
+
 +call Swap B();
 
 ###### Rotate A:
@@ -55,6 +56,7 @@
 ###### Rotate AB:
 
 +call Rotate A();
+
 +call Rotate B();
 
 ###### Reverse Rotate A:
@@ -76,4 +78,5 @@
 ###### Reverse Rotate AB:
 
 +call Reverse Rotate A();
+
 +call Reverse Rotate B();
