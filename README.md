@@ -1,5 +1,6 @@
-###### Push A:
+### OPERATIONS:
 
+###### Push A:
 
 +shift all elements in array A down by 1.
 
@@ -80,3 +81,28 @@
 +call Reverse Rotate A();
 
 +call Reverse Rotate B();
+
+
+### PROCESS
+
+#### Presorting
+
+Command line parameters are taken in and parsed into an array of integers:
+
+Input => [5, 11, 20, 1, 43, 88, 22, 33]
+
+We find a sorted version of this array:
+
+[5, 11, 20, 1, 43, 88, 22, 33] => [1, 5, 11, 20, 22, 33, 43, 88]
+
+We replace the integer values in the original array with their index in the sorted array:
+
+[5, 11, 20, 1, 43, 88, 22, 33] => [1, 2, 3, 0, 6, 7, 4, 5]
+
+Now the goal is to try and shift each integer value closer to the index it represents.
+
+Whatever sequence of pushswap operations shifts [1, 2, 3, 0, 6, 7, 4, 5] into [0, 1, 2, 3, 4, 5, 6, 7]
+
+will also shift the original integers in the same manner, ordering them from lowest to highest.
+
+
