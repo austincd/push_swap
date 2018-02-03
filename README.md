@@ -1,4 +1,4 @@
-######Push A:
+###### Push A:
 
 
 +shift all elements in array A down by 1.
@@ -7,7 +7,7 @@
 
 +shift all elements in array B up by 1.
 
-######Push B:
+###### Push B:
 
 +shift all elements in array B down by 1.
 
