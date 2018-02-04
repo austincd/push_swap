@@ -151,6 +151,32 @@ elements that ARE selected.
 
 "001011" + ["one", "two", "three", "four", "five", "six"] = ["three", "five", "six"];
 
+Selection Strings can be modified by being passed through ft_selstr functions, which currently support the following operations:
+
+ft_selstr_not()
+
+ft_selstr_not takes in a selection string and inverts it in-line, changing each '0' to '1' and vice versa.
+
+ft_selstr_and()
+
+ft_selstr_and takes in two selection strings and does the equivalent of a bitwise and('&') operation on 
+the binary notation contained in the string, returning the result in a newly allocated string.
+
+ft_selstr_and("0100101010", "11100001111111111") returns the selstr "0100000010". 
+
+Note that if the two selstrs are of differing length, no characters will be evaluated after reaching the end of the shorter one.
+
+ft_selstr_or()
+
+ft_selstr_or("0110", "11001110") returns the selstr "11101110".
+
+Note that here, with selstrs of differing sizes, the absence of a character in the shorter string is evaluated as '0';
+
+ft_selstr_xor()
+
+ft_selstr_xor("0110", "11001110") returns the selstr "10101110".
+
+
 #### How to Order a list of elements?
 
 Order a list of elements by making sublists that are ordered:
@@ -186,4 +212,4 @@ them to that position.
 The ft_apply_moves function takes an array A and an array B, along with an operation string, and then
 executes the operation specified by each character in the operation string, in sequence.
 
-####
+#### Looking Ahead
