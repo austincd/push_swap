@@ -149,3 +149,41 @@ character represents whether or not element 1 of an array is selected, so on and
 to represent "false" or unselected elements in a human readable format, while '1' characters mark array
 elements that ARE selected.
 
+"001011" + ["one", "two", "three", "four", "five", "six"] = ["three", "five", "six"];
+
+#### How to Order a list of elements?
+
+Order a list of elements by making sublists that are ordered:
+
++List A begins as an unordered list;
++Sift elements out from the unordered list A into one or more sorted lists in list B using rotation and push operation strings;
++Continue until the remaining elements in list A form a rotationally sorted list;
++Merge the sorted list A and the sorted segments of list B into a rotationally sorted list A containing all elements, once again using rotation and push operation strings;
++Rotate until list is sorted, with 0 at index 0, 1 at index 1, so on and so forth, until all elements are in list A and in ascending order.
+
+#### Technique : Sifting
+
+What can we do in a certain number of operations?
+
+We want to remove a selection of elements from array A and put them into array B in one or more rotationally sorted subarrays.
+
+We can only move elements between list A and list B when they are the first element in the source list. We try to find the fewest number
+of operations necessary to bring the element we want to sift out to the surface, along with the part of the target list we want to insert
+said element into.
+
+find the number of rotations and reverse rotations to bring some element in list A to index 0 of list A, and some element in list B to index 0 of list B.
+if we rotate in one direction for list A and another for list B, we can't take advantage of the AB operations to save steps, so the total number of operations
+is the sum of the rotation operations needed for list A and list B.
+
+if we rotate in the same direction for list A and list B, we can use the AB option until the list with fewer rotations is in place, and then follow
+with single list rotations. In this instance, the total number of operations is the greater of the required number of operations for each list.
+
+This way, we can be sure that whenever we want to move lists A and B to a particular position, we'll surely choose the shortest operation string to rotate
+them to that position.
+
+#### void ft_apply_moves(element *A, element *B, char *opstr)
+
+The ft_apply_moves function takes an array A and an array B, along with an operation string, and then
+executes the operation specified by each character in the operation string, in sequence.
+
+####
